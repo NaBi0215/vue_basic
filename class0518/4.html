@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件處理v-on和函式methods</title>
+    <style>
+        .box{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{tab}}
+        <button @click="tab = !tab">換色</button>
+        <div class="box" :class="tab?'red':'green'"></div>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    tab: true
+                }
+            },
+            methods: {
+            },
+        }).mount('#app')
+    </script>
+</body>
+</html>

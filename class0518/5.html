@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件處理v-on和函式methods</title>
+    <style>
+        .img{
+            /* width: 5rem; */
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button @click="addW">加大圖片</button>
+        <br>
+        <!-- <img src="images/Group 23.png" alt=""> -->
+        <!-- <img src="imgUrl" style="Width: 6rem;" alt=""> -->
+        <img :src="imgUrl" :style="{
+            Width: `${widths}rem`,
+            backgroundColor: bg
+            }" alt="">
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        Vue.createApp({
+            data(){
+                return {
+                    imgUrl:"images/Group 23.png",
+                    bg: '#999',
+                    widths:0
+                }
+            },
+            methods: {
+                addW(){
+                    if(this.widths === 9) return
+                    //每次按下去就加大圖片
+                    this.widths += 1
+                    //每次按下去就改底色
+                    this.bg = `#${this.add}${this.widths}${this.widths}`
+                }
+            },
+        }).mount('#app')
+    </script>
+</body>
+</html>
