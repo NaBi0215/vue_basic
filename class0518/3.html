@@ -39,12 +39,21 @@
                     this.res-= this.count
                 },
                 parse(){
-                    console.log('adadad')
+                    // console.log('adadad')
+                    //半正確寫法
+                    // return this.price * this.res
+                    //錯誤寫法
+                    // this.total = this.price * this.res;
+                    // return this.total;
                     return this.total = 100* this.res
                 },
                 parseDollar(){
-                    console.log('ad');
+                    // console.log('ad');
+                    //錯誤寫法 以後用computed
+                    // this.total = this.price / 30
+
                     return this.dollar = this.price*30
+
                 }
             },
         }).mount('#app')
